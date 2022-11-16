@@ -1,0 +1,49 @@
+@model IEnumerable<tarefas_app.Models.Tarefa>
+
+@{
+    ViewData["Title"] = "Minhas tarefas";
+}
+
+<h2>Minhas tarefas</h2>
+
+<p>
+    <a asp-action="Criar">Nova tarefa</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Titulo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descricao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Data)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Titulo)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Descricao)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Data)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

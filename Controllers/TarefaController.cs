@@ -18,7 +18,8 @@ namespace tarefas_app.Controllers
         
         public IActionResult Index()
         {
-            return View();
+            var tarefas = _context.Tarefas.ToList();
+            return View(tarefas);
         }
     }
 }
