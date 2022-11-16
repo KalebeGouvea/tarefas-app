@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using tarefas_app.Context;
+using tarefas_app.Models;
 
 namespace tarefas_app.Controllers
 {
@@ -20,6 +21,23 @@ namespace tarefas_app.Controllers
         {
             var tarefas = _context.Tarefas.ToList();
             return View(tarefas);
+        }
+
+        public IActionResult Criar()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Criar(Tarefa tarefa)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Tarefas.Add(tarefa);
+                _context.SaveChanges();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(tarefa);
         }
     }
 }

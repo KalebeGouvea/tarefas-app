@@ -1,0 +1,36 @@
+@model tarefas_app.Models.Tarefa;
+
+@{
+    ViewData["Title"] = "Nova tarefa";
+}
+
+<h1>Nova tarefa</h1>
+<p>Preencha os campos abaixo para criar uma nova tarefa.</p>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Criar">
+            <div class="form-group">
+                <label asp-for="Titulo" class="control-label"></label>
+                <input asp-for="Titulo" class="form-control">
+            </div>
+            <div class="form-group">
+                <label asp-for="Descricao" class="control-label"></label>
+                <input asp-for="Descricao" class="form-control">
+            </div>
+            <div class="form-group">
+                <label asp-for="Data" class="control-label"></label>
+                <input asp-for="Data" class="form-control" type="date">
+            </div>
+            <input asp-for="Status" type="hidden" value="false">
+            <br>
+            <div class="form-group">
+                <input type="submit" value="Criar" class="btn btn-primary">
+            </div>
+        </form>
+    </div>
+</div>
+<br>
+<div>
+    <a asp-action="Index">Voltar</a>
+</div>
