@@ -6,8 +6,7 @@
 
 <h1>Detalhes</h1>
 
-<br>
-<br>
+<br><br>
 
 <div>
     <h3>@Html.DisplayFor(x => x.Titulo)</h3>
@@ -30,5 +29,7 @@
 </div>
 
 <div>
+    <a asp-action="Editar" asp-route-id="@Model.Id" class="btn btn-primary" role="button">Editar</a>
+    <br><br>
     <a asp-action="Index">Voltar</a>
 </div>
