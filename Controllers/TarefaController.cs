@@ -23,6 +23,11 @@ namespace tarefas_app.Controllers
             return View(tarefas);
         }
 
+        public IActionResult Sobre()
+        {
+            return View();
+        }
+
         public IActionResult Criar()
         {
             return View();
