@@ -63,5 +63,15 @@ namespace tarefas_app.Controllers
 
             return RedirectToAction(nameof(Index));
         }
+
+        public IActionResult Detalhes(int id)
+        {
+            var tarefa = _context.Tarefas.Find(id);
+
+            if (tarefa == null)
+                return RedirectToAction(nameof(Index));
+            
+            return View(tarefa);
+        }
     }
 }

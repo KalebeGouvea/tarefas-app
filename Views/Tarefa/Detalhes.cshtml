@@ -1,0 +1,34 @@
+@model tarefas_app.Models.Tarefa;
+
+@{
+    ViewData["Title"] = "Detalhes";
+}
+
+<h1>Detalhes</h1>
+
+<br>
+<br>
+
+<div>
+    <h3>@Html.DisplayFor(x => x.Titulo)</h3>
+
+    <p class="text-muted">Descrição:</p>
+    <p>@Html.DisplayFor(x => x.Descricao)</p>
+
+    <p class="text-muted">Data:</p>
+    <p>@Html.DisplayFor(x => x.Data)</p>
+
+    <p class="text-muted">Status:</p>
+    @{
+        if(Model.Status == true)
+        {
+            <p>Concluído</p>
+        } else {
+            <p>A realizar</p>
+        }
+    }
+</div>
+
+<div>
+    <a asp-action="Index">Voltar</a>
+</div>
