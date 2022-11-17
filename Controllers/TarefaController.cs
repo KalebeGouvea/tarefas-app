@@ -108,7 +108,7 @@ namespace tarefas_app.Controllers
         public IActionResult Concluir(Tarefa tarefa)
         {
             var tarefaBanco = _context.Tarefas.Find(tarefa.Id);
-            tarefaBanco.Status = tarefa.Status;
+            tarefaBanco.Status = true;
             _context.Tarefas.Update(tarefaBanco);
             _context.SaveChanges();
 
