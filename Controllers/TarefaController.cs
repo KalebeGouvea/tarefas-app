@@ -93,5 +93,26 @@ namespace tarefas_app.Controllers
 
             return RedirectToAction(nameof(Index));
         }
+
+        public IActionResult Concluir(int id)
+        {
+            var tarefa = _context.Tarefas.Find(id);
+
+            if (tarefa == null)
+                return RedirectToAction(nameof(Index));
+            
+            return View(tarefa);
+        }
+
+        [HttpPost]
+        public IActionResult Concluir(Tarefa tarefa)
+        {
+            var tarefaBanco = _context.Tarefas.Find(tarefa.Id);
+            tarefaBanco.Status = tarefa.Status;
+            _context.Tarefas.Update(tarefaBanco);
+            _context.SaveChanges();
+
+            return RedirectToAction(nameof(Index));
+        }
     }
 }
