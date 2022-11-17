@@ -47,10 +47,10 @@
                     @Html.DisplayFor(model => item.Data)
                 </td>
                 <td>
-                    <a asp-action="Concluir" asp-route-id="item.Id" class="btn btn-primary" role="button">Concluir</a>
-                    <a asp-action="Editar" asp-route-id="item.Id" class="btn btn-primary" role="button">Editar</a>
-                    <a asp-action="Detalhes" asp-route-id="item.Id" class="btn btn-primary" role="button">Detalhes</a>
-                    <a asp-action="Deletar" asp-route-id="item.Id" class="btn btn-danger" role="button">Deletar</a>
+                    <a asp-action="Concluir" asp-route-id="@item.Id" class="btn btn-primary" role="button">Concluir</a>
+                    <a asp-action="Editar" asp-route-id="@item.Id" class="btn btn-primary" role="button">Editar</a>
+                    <a asp-action="Detalhes" asp-route-id="@item.Id" class="btn btn-primary" role="button">Detalhes</a>
+                    <a asp-action="Deletar" asp-route-id="@item.Id" class="btn btn-danger" role="button">Deletar</a>
                 </td>
             </tr>
         }
