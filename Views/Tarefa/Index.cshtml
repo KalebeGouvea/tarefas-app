@@ -5,9 +5,10 @@
 }
 
 <h1>Minhas tarefas</h1>
+<br><br>
 
 <p>
-    <a asp-action="Criar">Nova tarefa</a>
+    <a class="btn btn-warning" role="button" asp-action="Criar">Nova tarefa</a>
 </p>
 
 <div>
@@ -25,7 +26,7 @@
                 <th width="15%">
                     @Html.DisplayNameFor(model => model.Data)
                 </th>
-                <th width="25%">
+                <th width="15%">
                     
                 </th>
             </tr>
@@ -93,7 +94,7 @@
                 <th width="15%">
                     @Html.DisplayNameFor(model => model.Data)
                 </th>
-                <th width="25%">
+                <th width="15%">
                     
                 </th>
             </tr>
